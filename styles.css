@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Itim', cursive;
+}
+
+.background {
+  background-color: #41002d;
+  height: 100vh;
+  padding-top: 1px;
+  background-image: url('https://cdn.pixabay.com/photo/2016/11/29/12/54/penguin-1867387_960_720.jpg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 150px;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10%;
+}
+
+.display {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  max-width: 300px;
+
+}
+
+.tile {
+  border: 1px solid white;
+  min-width: 100px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.tile:hover {
+  background: linear-gradient(to bottom right, #41002d, #70004f, #8f0064)
+}
+
+.playerX {
+  color: #eeea00;
+}
+
+.playerO {
+  color: #00ffdd;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.controls button {
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: linear-gradient(to bottom right, #000000, #292929, rgb(102, 102, 102));
+}
+
+.restart {
+  background-color: #41002d;
+}
+
+#reset {
+  background-color: #000000;
+}
+/* Animation for the tiles when they are clicked */
+.tile.clicked {
+  animation: tile-clicked 0.5s;
+}
+
+@keyframes tile-clicked {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* Animation for the announcer when it appears */
+.announcer {
+  animation: announcer-appear 1s;
+}
+
+@keyframes announcer-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Images for the background when someone wins or loses */
+.background.playerX-won {
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/07/01/41/fireworks-2596049_960_720.jpg");
+  background-size: cover;
+}
+
+.background.playerO-won {
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/07/01/41/fireworks-2596049_960_720.jpg");
+  background-size: cover;
+}
+
+.background.tie {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/10/21/board-1868518_960_720.jpg");
+  background-size: cover;
+}
+
